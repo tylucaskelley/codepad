@@ -1,4 +1,4 @@
-CodePad, Version 1.0
+CodePad, Version 0.1
 By Ty-Lucas Kelley
 	
 	**LICESNSE**
