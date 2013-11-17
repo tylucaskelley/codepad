@@ -33,6 +33,8 @@ import javax.swing.text.*;
 import javax.swing.undo.*;
 
 import java.io.*;
+import java.net.*;
+import java.awt.print.*;
 import java.io.BufferedReader; 
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -121,6 +123,25 @@ public class CodePad {
 			}
 		});
 		
+		//add the KeyListener to textArea
+		textArea.addKeyListener(new KeyListener() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_TAB) {
+					e.consume();
+					fourSpaces(textArea);
+				}
+			}
+			@Override
+			public void keyTyped(KeyEvent e) {
+				//do nothing
+			}
+			@Override
+			public void keyReleased(KeyEvent e) {
+				//do nothing
+			}			
+		});
+
 		//make the frame visible and make sure it doesn't run in background
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
@@ -239,13 +260,20 @@ public class CodePad {
 				}
 			});
 		helpMenu.add(aboutItem);
+		updateItem = new JMenuItem("Check for Updates");
+			updateItem.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					updateLink();
+				}
+			});
+		helpMenu.add(updateItem);
 		timeDateItem = new JMenuItem("Time and Date");
 			timeDateItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, SHORTCUT_MASK));
 			timeDateItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				showDate();
-			}
-		});
+				public void actionPerformed(ActionEvent e) {
+					showDate();
+				}
+			});
 		helpMenu.add(timeDateItem);
 	}
 	
@@ -329,7 +357,21 @@ public class CodePad {
 		}
 	}
 	private void printFile() {
-		//not implemented yet
+        String printData = textArea.getText();
+		
+		PrinterJob job = PrinterJob.getPrinterJob();
+		job.setPrintable(new PrintFile(printData));
+		job.setJobName(frame.getTitle());
+		
+		boolean doPrint = job.printDialog();
+		if (doPrint) { 
+			try {
+				job.print();
+			}
+			catch (PrinterException e) {
+				e.printStackTrace();
+			}
+		}  
 	}
 	private void closeProgram() {
 		System.exit(0);
@@ -357,11 +399,33 @@ public class CodePad {
 	
 	//methods for the helpMenu
 	private void showAbout() {
-		JOptionPane.showMessageDialog(frame, "CodePad, Version 1.0\nBy: Ty-Lucas Kelley\n\nCodePad is a simple text editor with\npowerful features.");
+		JOptionPane.showMessageDialog(frame, "CodePad, Version 0.9\nBy: Ty-Lucas Kelley\n\nCodePad is a simple text editor with\nthe powerful features that programmers expect.\nFor more open-source projects, visit\nwww.tylucaskelley.com");
 	}
 	private void showDate() {
-		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm");
+		DateFormat dateFormat = new SimpleDateFormat("HH:mm MM/dd/yyyy");
 		Date date = new Date();
 		JOptionPane.showMessageDialog(frame, dateFormat.format(date));
+	}
+	private void updateLink() {
+		if (Desktop.isDesktopSupported()) {
+			try {
+				URI update = new URI("https://github.com/tylucaskelley/CodePad");
+				Desktop.getDesktop().browse(update);
+			}
+			catch (URISyntaxException e) {
+				e.printStackTrace();
+			}
+			catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		else {
+			//do nothing
+		}	
+	}
+	
+	//make tab do four spaces instead of eight
+	private void fourSpaces(JTextArea ta) {
+		ta.append("    ");
 	}
 }

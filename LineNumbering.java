@@ -65,7 +65,7 @@ public class LineNumbering extends JPanel implements CaretListener, DocumentList
 
 		setFont( component.getFont() );
 
-		setBorderGap( 5 );
+		setBorderGap(5);
 		setCurrentLineForeground( Color.RED );
 		setDigitAlignment( RIGHT );
 		setMinimumDisplayDigits( minimumDisplayDigits );
