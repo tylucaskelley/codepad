@@ -1,9 +1,9 @@
-CodePad, Version 0.9
+CodePad, Version 1.0
 By Ty-Lucas Kelley
 	
 	**LICESNSE**
 
-	This file is part of CodePad
+	This file is a part of CodePad
 
 	CodePad is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -32,6 +32,7 @@ Current Features:
 	9. Link to my GitHub for updates
 	10. Printing text files
 Coming soon:
+	1. Fix bug where printing defaults to "9999" pages
 	2. Improved Undo/Redo: group edits so undo/redo isn't letter by letter
 	3. Font Editor (under Edit menu)
 		-Select Font
@@ -59,4 +60,4 @@ Coming soon:
 	10. More and better keyboard shortcuts
 	11. Debugging, cleaner code and comments. Maybe break code up into more classes.
 How to run:
-	For now, compile the "CodePadDriver.java" file and run the class file.
+	Download the latest CodePad.jar file and double-click to run!
