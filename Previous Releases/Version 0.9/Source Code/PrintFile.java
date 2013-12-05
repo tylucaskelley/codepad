@@ -1,8 +1,8 @@
 /*
-*    CodePad, Version 1.0
+*    CodePad, Version 0.9
 *    By Ty-Lucas Kelley
 *	
-*	 **LICESNSE**
+*	 **LICENSE**
 *
 *	 This file is a part of CodePad.
 *

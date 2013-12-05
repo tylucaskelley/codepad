@@ -1,8 +1,8 @@
 /*
-*    CodePad, Version 1.0
+*    CodePad, Version 0.9
 *    By Ty-Lucas Kelley
 *	
-*	 **LICESNSE**
+*	 **LICENSE**
 *
 *	 This file is a part of CodePad.
 *
@@ -13,7 +13,7 @@
 *
 *    CodePad is distributed in the hope that it will be useful,
 *    but WITHOUT ANY WARRANTY; without even the implied warranty of
-*    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 *    GNU General Public License for more details.
 *
 *    You should have received a copy of the GNU General Public License

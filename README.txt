@@ -1,7 +1,7 @@
-CodePad, Version 1.0
+CodePad, Version 0.9
 By Ty-Lucas Kelley
 	
-	**LICESNSE**
+	**LICENSE**
 
 	This file is a part of CodePad
 
@@ -21,17 +21,19 @@ By Ty-Lucas Kelley
 CodePad is a simple yet powerful Java-based text editor.
 
 Current Features:
-	1. Ability to write text documents
-	2. Line Numbering
+	1. Ability to edit files
+	2. Line numbers that add with each new line and disappear when lines are deleted.
 	3. Cut, Copy, Paste
 	4. Time and Date
 	5. An "About" section
 	6. New, Open, Save, Save As
 	7. Undo and Redo
 	8. Hitting tab adds four spaces instead of eight (important for Python, etc.)
-	9. Link to my GitHub for updates
+	9. Link to my GitHub page for updates
 	10. Printing text files
+
 Coming soon:
+	**COMPLETELY REWRITING ALL CODE FOR READABILITY AND EFFICIENCY**
 	1. Fix bug where printing defaults to "9999" pages
 	2. Improved Undo/Redo: group edits so undo/redo isn't letter by letter
 	3. Font Editor (under Edit menu)
@@ -59,5 +61,8 @@ Coming soon:
 	9. Prompt user to save unsaved file when they select new, open, or exit program
 	10. More and better keyboard shortcuts
 	11. Debugging, cleaner code and comments. Maybe break code up into more classes.
-How to run:
-	Download the latest CodePad.jar file and double-click to run!
+
+How to Run:
+	1. Go to https://github.com/tylucaskelley/BrickBreaker
+	2. Click "Download ZIP"
+	3. Double-click the "CodePad.jar" file to run!
