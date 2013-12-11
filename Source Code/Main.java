@@ -23,29 +23,49 @@
 //This "Main" class creates an instance of the "CodePad" class and displays it to run the program.
 
 //Imports
-import javax.swing.JFrame;
+import javax.swing.*;
 import java.awt.Dimension;
 
 //Class Definition
 public class Main {
 	//Main Method
 	public static void main(String[] args) {
-		//Make the frame and set its properties
-		JFrame frame = new JFrame("CodePad");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(800,750);
-		frame.setMinimumSize(new Dimension(500,500));
+		//Components
+		private JFrame frame;
+		private Container pane;
+		private CodePad codePad;
+		private MenuBar menuBar;
+		private StatusBar statusBar;
 
-		//Place frame in the middle of the screen
-		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-		frame.setLocation(dim.width/2-frame.getSize().width/2, dim.height/2-frame.getSize().height/2);
+		//Create Swing Thread
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				//Make the frame and set its properties
+				frame = new JFrame("CodePad 1.0");
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setSize(800,750);
+				frame.setMinimumSize(new Dimension(400,350));
+				frame.setLocationRelativeTo(null);
+				frame.setLayout(new BorderLayout());
+				pane = frame.getContentPane();
 
-		//Create a new "CodePad" and add it to the frame's content pane
-		CodePad codepad = new CodePad();
-		Container pane = frame.getContentPane();
-		pane.add(codepad);
+				//Create a new "CodePad" and add it to the frame's content pane
+				codePad = new CodePad(800,750);
+				pane.add(codePad, BorderLayout.CENTER);
 
-		//Make the frame visible
-		frame.setVisible(true);
+				//Create a new "MenuBar" and add it to the frame's content pane
+				menuBar = new MenuBar();
+				frame.setJMenuBar(menuBar);
+
+				//Create a "StatusBar" and add it to the frame's content pane
+				statusBar = new StatusBar();
+				statusBar.setBorder(new BevelBorder(BevelBorder.LOWERED));
+				frame.add(statusBar, BorderLayout.SOUTH);
+
+
+				//Make the frame visible
+				frame.setVisible(true);
+			}
+		});
 	}
 }

@@ -23,3 +23,39 @@
 //This "CodePad" class puts everything together and creates the panel to be added to the "Main" class's frame.
 
 //Imports
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+//Class Definition
+public class CodePad extends JPanel {
+	//Components
+	private JTextArea textArea;
+	private JScrollPane scrollPane;
+	private LineNumbers lineNumbers;
+	private StatusBar statusBar;
+
+	//Variables
+	private boolean lineWrap;
+
+	//Constructor
+	public CodePad(int width, int height) {
+		//Set the properties
+		super.setPreferredSize(width, height);
+
+		//Add the text area and line numbering
+		textArea = new JTextArea();
+
+
+		//Add listeners
+	}
+
+	//Accesor Methods
+
+	//Return the textarea
+	public void getTextArea() {
+		return textArea;
+	}
+
+
+}

@@ -24,3 +24,14 @@
 //Displays time and date, word count, file extension, number of lines
 
 //Imports
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+//Class Definition
+public class StatusBar extends JPanel {
+	//
+	public StatusPanel() {
+
+	}
+}
