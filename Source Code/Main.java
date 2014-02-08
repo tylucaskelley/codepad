@@ -40,6 +40,13 @@ public class Main {
 		//Create Swing Thread
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
+				//Set look and feel to that of OS
+				try {
+					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				
 				//Make the frame and set its properties
 				frame = new JFrame("CodePad 1.0");
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
