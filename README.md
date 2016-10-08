@@ -1,40 +1,52 @@
-#CodePad
-####_A Simple Text Editor for Programmers_
-_2014 Ty-Lucas Kelley_
+# Notepad
 
-###Screenshot
+Notepad is a basic text editor written in Java. It works on multiple platforms
+and supports features such as file creation and editing, cut and paste, etc.
 
-![CodePad](img/screenshot.png "CodePad")
-	
-**LICENSE (GPLv3)**
+---
 
-	This file is a part of CodePad.
+### Screenshot
 
-	CodePad is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the 
-	Free Software Foundation, either version 3 of the License, or (at your option) any later version. 
-	
-    CodePad is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+![Notepad](img/screenshot.png "Notepad")
 
-    You should have received a copy of the GNU General Public License along with CodePad. 
-    If not, see http://www.gnu.org/licenses/.
+### Motivation
 
-###What is it?
-A simple, Java-based, multi-platform text editor. It is lightweight, but includes several useful features:
+I made this as a way to learn how to write Java programs, and also as an
+introduction to GUI applications. The text editor itself is not anything
+special, and shouldn't replace your current editor.
 
-1. Ability to edit files
-2. Line numbers that add with each new line and disappear when lines are deleted.
-3. Cut, Copy, Paste
-4. Time and Date
-5. An "About" section
-6. New, Open, Save, Save As
-7. Undo and Redo
-8. Hitting tab adds four spaces instead of eight (important for Python, etc.)
-9. Link to webpage for updates
-10. Printing text files
+### Installation
 
-###How do I run it?
+Make sure you have Java 6.x, 7.x, or 8.x installed, and then download the 
+[ZIP](https://github.com/tylucaskelley/notepad/archive/master.zip). Once you
+uncompress the folder, just run `notepad.jar` to open the editor.
 
-1. Go to https://github.com/tylucaskelley/CodePad
-2. Click "Download ZIP"
-3. Double-click the "CodePad.jar" file to run!
+### Features
+
+Here's what Notepad can do:
+
+1. Create and edit text files
+2. Show line numbers
+3. Cut, copy, and paste
+4. Undo and redo
+5. Print your files
+6. A link to the repository for updates
+
+### Contributing
+
+See [CONTRIBUTING.md](https://github.com/tylucaskelley/notepad/blob/master/.github/CONTRIBUTING.md)
+for details.
+
+To build the project (starting from main directory):
+
+```bash
+$ javac -d bin src/*.java
+$ cd bin
+$ jar cvfe Notepad.jar NotepadDriver *.class
+$ mv Notepad.jar ..
+```
+
+### License
+
+Notepad is licensed by the
+[MIT License](https://github.com/tylucaskelley/notepad/blob/master/LICENSE).
